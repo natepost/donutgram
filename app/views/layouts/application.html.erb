@@ -11,16 +11,13 @@
   </head>
   <body>
     <%= render 'layouts/nav'%>
-    <div class="container">
-      <% flash.each do |a, b| %>
-        <div class="alert alert-success"><%= b %>
-        </div>
-      <% end %>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+    <div class="container">
+      <span class="notice"><%= notice %></span>
+      <span class="alert"><%= alert %></span>
         <%= yield %>
       </div>
+      
   </body>
   <%= render 'layouts/navigation/footer' %>
 </html>
