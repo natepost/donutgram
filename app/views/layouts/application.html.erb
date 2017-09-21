@@ -12,18 +12,15 @@
   <body>
     <%= render 'layouts/nav'%>
     <div class="container">
-        <div class="abs-center-x">
-          <% flash.each do |a, b| %>
-            <div class="alert alert-success"><%= b %>
-            </div>
-            <% end %>
+      <% flash.each do |a, b| %>
+        <div class="alert alert-success"><%= b %>
+        </div>
+      <% end %>
 
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-          <%= yield %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+        <%= yield %>
       </div>
-    </div>
-
   </body>
   <%= render 'layouts/navigation/footer' %>
 </html>
