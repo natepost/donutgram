@@ -1,3 +1,15 @@
-<%= image_tag(@post.image.url(:medium)) %>
-<br >
-<%= @post.description %>
+<div class="container">
+  <%= image_tag @post.image.url(:medium) %>
+  <br >
+  <h3><%= @post.description %></h3>
+</div>
+
+<nav aria-label="...">
+  <ul class="pager">
+    <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+    <li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+  </ul>
+</nav>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Home', posts_path %>

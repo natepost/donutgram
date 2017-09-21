@@ -6,14 +6,24 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <%= stylesheet_link_tag href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
 
+  </head>
   <body>
-    <div class="container-fluid" >
-      <p class="alert alert-success"><%= notice %></p>
-      <p class="alert alert-danger"><%= alert %></p>
-      <%= render 'shared/navbar' %>
-      <%= yield %>
+    <%= render 'layouts/navigation/layout'%>
+    <div class="container">
+        <div class="abs-center-x">
+          <% flash.each do |a, b| %>
+            <div class="alert alert-success"><%= b %>
+            </div>
+            <% end %>
+
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <%= yield %>
+      </div>
     </div>
+
   </body>
+  <%= render 'layouts/navigation/footer' %>
 </html>

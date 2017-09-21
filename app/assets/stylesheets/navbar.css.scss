@@ -1,5 +1,5 @@
 .navbar-custom {
-    background-color: #ff5500;
+    background-color: #28794B;
 }
 
 /* change the brand and text color */
@@ -16,7 +16,7 @@
 /* change the color of active or hovered links */
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
-    color: #ffffff;
+    color: #ff0000;
 }
 
 /* for dropdown only - change the color of droodown */
@@ -30,4 +30,45 @@
 .navbar-custom .dropdown-item:focus {
     color: #333333;
     background-color: rgba(255,255,255,.5);
+}
+
+// example output for .navbar-toggleable if .container-fluid was added to where .container is in _navbar.scss
+
+@media (max-width: 575px) {
+.navbar-toggleable > .container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+}
+
+// @media (min-width: 576px) {
+//   .navbar-toggleable > .container-fluid {
+//     display: -webkit-box;
+//     display: -webkit-flex;
+//     display: -ms-flexbox;
+//     display: flex;
+//     -webkit-flex-wrap: nowrap;
+//         -ms-flex-wrap: nowrap;
+//             flex-wrap: nowrap;
+//     -webkit-box-align: center;
+//     -webkit-align-items: center;
+//         -ms-flex-align: center;
+//             align-items: center;
+//   }
+// }
+
+// typical hack to limit max size of content
+
+.abs-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container-fluid {
+  max-width: 1400px;
+}
+
+.container {
+  max-width: 1200px;
 }

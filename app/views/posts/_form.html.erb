@@ -1,0 +1,21 @@
+<%= form_for @post, html: { multipart: true } do |f| %>
+  <% if @post.errors.any? %>
+  <div id="error-explanation">
+    <h3><%= pluralize(@post.errors.count, "error") %> stopped this post from saving:</h3>
+    <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    <br />
+    <%= f.button :submit %>
+  <% end %>
+  </div>

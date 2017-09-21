@@ -1,14 +1,8 @@
 <div class="jumbotron">
   <h2 class="display-3">New Post!</h2>
   <hr class="my-4">
-  <%= form_for @post, html: { multipart: true } do |f| %>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
 
-    <br>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-    <br>
-    <%= f.submit 'Post!', :class => 'btn btn-outline-success' %>
-    <% end %>
+<%= render 'form' %>
 </div>
+
+<%= link_to 'Home', posts_path %>
