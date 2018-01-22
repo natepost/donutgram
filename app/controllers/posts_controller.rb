@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
-  def new
-    @post = Post.new
-  end
-
   def index
     @posts = Post.all
+  end
+
+  def new
+    @post = current_user.posts.build
   end
 
   def edit
@@ -15,21 +15,21 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(permit_post)
+      @post = current_user.posts.build
 
     if @post.save
         flash[:success] = "Woot, that worked!"
         redirect_to post_path(@post)
 
       else
-        flash[:error] = @post.errors.full_messages
+        flash[:error] = "shit!"
         redirect_to new_post_path(@post)
       end
     end
 
   private
 
-  def permit_post
+  def post_params
     params.require(:post).permit(:image, :description)
   end
 end

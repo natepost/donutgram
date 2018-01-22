@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
     <%= stylesheet_link_tag href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
 
   </head>
@@ -15,9 +16,9 @@
     <div class="container">
       <span class="notice"><%= notice %></span>
       <span class="alert"><%= alert %></span>
+  
         <%= yield %>
-      </div>
-      
+
   </body>
   <%= render 'layouts/navigation/footer' %>
 </html>
